@@ -13,7 +13,7 @@ class CustomColor {
 }
 
 class Constants {
-  static const BASE_URL = "http://10.0.2.2:8000/api";
+  static const BASE_URL = "https://horizon-booking.herokuapp.com/api";
 }
 class Utils {
   static String numberFormat(int num) {
