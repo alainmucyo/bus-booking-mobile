@@ -1,5 +1,6 @@
 import 'package:booking_app/models/booking.dart';
 import 'package:booking_app/providers/auth_provider.dart';
+import 'package:booking_app/screens/admin_login.dart';
 import 'package:booking_app/utils/constants.dart';
 import 'package:booking_app/widgets/booking_item.dart';
 import 'package:booking_app/widgets/shared/empty_container.dart';
@@ -64,7 +65,6 @@ class _AdminDashboardState extends State<AdminDashboard> {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
 /*    var userId = Provider.of<AuthProvider>(context, listen: false).userId;
@@ -100,7 +100,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
         Utils.showSnackBar(
           title: "Booking validated successfully!",
           context: context,
-          color: Theme.of(context).accentColor,
+          color: Colors.green,
         );
       } on DioError catch (e) {
         print(e.response.data["message"]);
@@ -117,8 +117,23 @@ class _AdminDashboardState extends State<AdminDashboard> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Admin Dashboard"),
+        title: Text("Stuff Dashboard"),
         centerTitle: true,
+        actions: [
+          PopupMenuButton(
+            onSelected: (val){
+              Navigator.pushReplacementNamed(context, AdminLogin.routeName);
+            },
+            itemBuilder: (context) {
+              return [
+                PopupMenuItem(
+                  value: "logout",
+                  child: Text("Logout"),
+                )
+              ];
+            },
+          )
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         tooltip: "Validate A Ticket",
@@ -135,8 +150,12 @@ class _AdminDashboardState extends State<AdminDashboard> {
               ),
               builder: (_) {
                 return SingleChildScrollView(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 14, horizontal: 12),
+                  padding: EdgeInsets.only(
+                    top: 14,
+                    left: 12,
+                    right: 12,
+                    bottom: MediaQuery.of(context).viewInsets.bottom + 20,
+                  ),
                   child: Form(
                     key: _formKey,
                     child: Column(

@@ -84,7 +84,7 @@ class _AdminLoginState extends State<AdminLogin> {
                     SizedBox(height: 10),
                     Center(
                         child: Text(
-                      "Please, provide your credentials to login as a bus driver!",
+                      "Please, provide your credentials to login as a staff!",
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.grey[600], fontSize: 16),
                     )),

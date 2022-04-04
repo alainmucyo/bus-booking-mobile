@@ -74,7 +74,8 @@ class _DestinationScreenState extends State<DestinationScreen> {
       );
     } on DioError catch (e) {
       Navigator.pop(context);
-      Utils.showSnackBar(title: e.response.data["message"], context: context);
+      print(e.response.data);
+      // Utils.showSnackBar(title: e.response.data["message"], context: context);
     } catch (e) {
       Navigator.pop(context);
       print(e);
