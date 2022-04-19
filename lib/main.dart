@@ -1,9 +1,5 @@
 import 'package:booking_app/screens/admin_dashboard.dart';
-import 'package:booking_app/screens/admin_dashboard.dart';
 import 'package:booking_app/screens/admin_login.dart';
-import 'package:booking_app/screens/admin_login.dart';
-import 'package:booking_app/screens/admin_reports.dart';
-import 'package:booking_app/screens/admin_reports.dart';
 import 'package:booking_app/screens/home.dart';
 import 'package:booking_app/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
